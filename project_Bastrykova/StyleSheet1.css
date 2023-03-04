@@ -1,0 +1,443 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+html {
+    font-family: 'Century Gothic', sans-serif;
+}
+
+.header {
+}
+
+.navigation {
+    text-align: center;
+}
+
+.row-near-concerts {
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: auto;
+}
+
+.row-about-history {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+    .row-about-history h5 {
+        margin-top: 70px;
+    }
+
+
+@media only screen and (max-width: 1120px) {
+    .row-about-history h5 {
+        margin-top: 15px;
+    }
+}
+
+
+.concerts-container {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.concert {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    margin: 20px 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+    .concert h6 {
+        opacity: 0.6;
+        margin: 0;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding-top: 10px;
+    }
+
+    .concert h3 {
+        letter-spacing: 1px;
+        margin: 30px 0;
+    }
+
+.concert-date {
+    background-color: darkred;
+    color: #fff;
+    padding: 30px;
+    width: 400px;
+    text-align: center;
+}
+
+.concert-go {
+    background-color: dimgrey;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    width: 400px;
+    position: relative;
+}
+
+.concert-info {
+    padding: 30px;
+    position: relative;
+    width: 100%;
+}
+
+
+@media only screen and (max-width: 1120px) {
+    .concert h3 {
+        margin-top: 40px 0;
+    }
+}
+
+.disc-title {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.disc-img {
+    text-align: center;
+}
+
+.disc-songs {
+    margin-top: 30px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1300px) {
+    .disc-img {
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 1120px) {
+    .disc-img {
+        margin-top: 45px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .disc-img {
+        margin-top: 80px;
+    }
+}
+
+
+.first-albom {
+    margin-top: 30px;
+    background-color: antiquewhite;
+}
+
+.third-albom {
+    margin-top: 30px;
+    background-color: antiquewhite;
+}
+
+.fifth-albom {
+    margin-top: 30px;
+    background-color: antiquewhite;
+}
+
+.seventh-albom {
+    margin-top: 30px;
+    background-color: antiquewhite;
+}
+
+.ninth-albom {
+    margin-top: 30px;
+    background-color: antiquewhite;
+}
+
+.second-albom {
+    margin-top: 30px;
+    background-color: aliceblue;
+}
+
+.fourth-albom {
+    margin-top: 30px;
+    background-color: aliceblue;
+}
+
+.sixth-albom {
+    margin-top: 30px;
+    background-color: aliceblue;
+}
+
+.eighth-albom {
+    margin-top: 30px;
+    background-color: aliceblue;
+}
+
+.tenth-albom {
+    margin-top: 30px;
+    background-color: aliceblue;
+}
+
+.feedback {
+    text-align: center;
+}
+
+    .feedback h2 {
+        padding: 20px 0;
+    }
+
+
+.product-inner {
+    padding-left: 0;
+    width: 100%;
+    margin: 0 auto;
+    background: white;
+    text-align: center;
+    transition: .2s linear;
+}
+
+.product-wrap {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+    .product-wrap img {
+        display: block;
+        width: 100%;
+    }
+
+.product-inner:hover .actions {
+    bottom: 0;
+}
+
+.product-info {
+    padding-bottom: 10px;
+    font-family: 'Century Gothic', sans-serif;
+}
+
+.product-title {
+    margin: 0 0 10px 0;
+    font-family: 'Century Gothic', sans-serif;
+    color: dimgrey;
+    font-weight: 400;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.video-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+    background: url(videostop.png) no-repeat #94a233;
+    background-size: cover;
+}
+
+    .video-bg video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+    }
+
+@supports (object-fit: cover) {
+    .video-bg video {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+.input-info {
+    padding-left: 5px;
+    height: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Century Gothic', sans-serif;
+    color: dimgrey;
+    width: 300px;
+    border: 1px solid grey;
+    font-size: 16px;
+}
+
+    .input-info:hover {
+        border: 2px solid green;
+    }
+
+    .input-info:focus {
+        outline: none;
+        border: 2px solid green;
+    }
+
+.auto-style1 {
+    width: 100%;
+}
+
+
+.input-info-text {
+    padding-top: 5px;
+    padding-left: 5px;
+    height: 200px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Century Gothic', sans-serif;
+    color: dimgrey;
+    width: 515px;
+    border: 1px solid grey;
+    font-size: 16px;
+}
+
+    .input-info-text:hover {
+        border: 2px solid green;
+    }
+
+    .input-info-text:focus {
+        outline: none;
+        border: 2px solid green;
+    }
+
+
+.btn-outline-success {
+    margin: 10px;
+}
+
+
+.footer {
+    background-color: whitesmoke;
+    color: dimgrey;
+    text-align: center;
+    font-size: 14px;
+    padding: 15px;
+    flex-direction: column;
+}
+
+.footerSocIcons {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.footerLogo {
+    padding-bottom: 10px;
+}
+
+.footer ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.footer a {
+    text-decoration: none;
+    color: dimgrey;
+    display: block;
+    padding: 10px;
+}
+
+    .footer a:hover {
+        color: black;
+    }
+
+.container {
+    max-width: 100%;
+    margin: auto;
+}
+
+    .container .ui-state-active {
+        background-color: #33b5e5;
+        border: 1px solid #33b5e5;
+    }
+
+
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+
+
+@media only screen and (max-width: 576px) {
+    .input-info-text, .input-info {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {
+        width: 8.33%;
+    }
+
+    .col-2 {
+        width: 16.66%;
+    }
+
+    .col-3 {
+        width: 25%;
+    }
+
+    .col-4 {
+        width: 33.33%;
+    }
+
+    .col-5 {
+        width: 41.66%;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+    .col-7 {
+        width: 58.33%;
+    }
+
+    .col-8 {
+        width: 66.66%;
+    }
+
+    .col-9 {
+        width: 75%;
+    }
+
+    .col-10 {
+        width: 83.33%;
+    }
+
+    .col-11 {
+        width: 91.66%;
+    }
+
+    .col-12 {
+        width: 100%;
+    }
+}

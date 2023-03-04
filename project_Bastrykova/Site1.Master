@@ -1,0 +1,119 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="project_Bastrykova.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="StyleSheet1.css" />
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <div class="navigation">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                        <a class="navbar-brand" href="main_page.aspx">
+                            <img src="https://bdva.ru/_next/image?url=%2Fimages%2Fimg__header--logo.png&w=1920&q=75" alt="pic" style="width: 133,5px; height: 33px;">
+                        </a>
+                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="main_page.aspx">Главная</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tour.aspx">Афиша</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="group.aspx">О группе</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="discography.aspx">Дискография</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="feedback.aspx">Написать нам</a>
+                            </li>
+                        </ul>
+
+
+                        <% if (IsAuthenticated())
+                                Response.Write(String.Format(@"<a class=""btn btn-outline-success my-2 my-sm-0""  href=""account.aspx"" role=""button"">Личный кабинет</a>"));
+                            else
+                                Response.Write(String.Format(@"<a class=""btn btn-outline-success my-2 my-sm-0"" href=""Default.aspx"" role=""button"">Войти на сайт</a>"));
+                        %>
+                        <asp:Button ID="LogOut" runat="server" class="btn btn-outline-success my-2 my-sm-0" Text="Выход" OnClick="Button1_Click" Width="121px" />
+
+                    </div>
+                </nav>
+            </div>
+
+        </div>
+
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+       
+            <div class="container">
+                <div class="footer">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <ul>
+                                <li><a href="main_page.aspx">Главная</a></li>
+                               <%  if (!IsAuthenticated())
+                                Response.Write(String.Format(@"<li><a href=""Default.aspx"">Войти на сайт</a></li>"));
+                                %>
+                                <li><a href="tour.aspx">Афиша</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="footerLogo">
+                                <img src="https://bdva.ru/_next/image?url=%2Fimages%2Fimg__header--logo.png&w=1920&q=75" alt="pic" style="width: 133,5px; height: 33px;">
+                            </div>
+                            <div class="footerSocIcons">
+                                <a href="https://www.facebook.com/b2band">
+                                    <img src="https://bdva.ru/images/icon__footer--fb.svg" alt="img">
+                                </a>
+                                <a href="https://www.instagram.com/b2band/">
+                                    <img src="https://bdva.ru/images/icon__footer--inst.svg" alt="img">
+                                </a>
+                                <a href="https://twitter.com/b2band">
+                                    <img src="https://bdva.ru/images/icon__footer--twi.svg" alt="img">
+                                </a>
+                                <a href="https://vk.com/b2band">
+                                    <img src="https://bdva.ru/images/icon__footer--vk.svg" alt="img">
+                                </a>
+                                <a href="https://www.youtube.com/user/B2band">
+                                    <img src="https://bdva.ru/images/icon__footer--yt.svg" alt="img">
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <ul>
+                                <li><a href="group.aspx">О группе</a></li>
+                                <li><a href="discography.aspx">Дискография</a></li>
+                                <li><a href="feedback.aspx">Написать нам</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    </form>
+
+</body>
+</html>
